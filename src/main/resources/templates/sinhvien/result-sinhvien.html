@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+<!--    <title th:text="${title}='Kết Quả'"></title>-->
+    <title >Ket qua</title>
+</head>
+<body>
+<section layout:fragment="content" class="mt-4">
+  <h1 th:text="${message}"></h1>
+  <table border="1" class="table table-striped mt-4">
+    <tr>
+      <th>Tên</th>
+      <th>Tuổi</th>
+      <th>Khoa</th>
+    </tr>
+    <tr>
+      <td th:text="${sinhVien.ten}">Tên</td>
+      <td th:text="${sinhVien.tuoi}">Tuổi</td>
+      <td th:text="${sinhVien.khoa}">Khoa</td>
+    </tr>
+  </table>
+  <a th:href="@{/}" type="secondary" class="btn btn-secondary">Back Home</a>
+</section>
+</body>
+</html>

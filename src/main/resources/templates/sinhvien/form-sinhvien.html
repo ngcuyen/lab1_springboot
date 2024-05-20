@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Form sinh vien</title>
+</head>
+<body>
+<section layout:fragment="content" class="mt-4">
+    <h1>Form Sinh Viên</h1>
+    <form th:action="@{/sinhvien}" th:object="${sinhVien}" method="post" class="p-4 rounded-lg bg-light">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label font-bold">Ten</label>
+            <input class="form-control" id="exampleFormControlInput1" type="text" th:field="*{ten}">
+            <p th:if="${#fields.hasErrors('ten')}" th:errors="*{ten}" style="color:red;"></p>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label font-bold">Tuoi</label>
+            <input class="form-control" id="exampleFormControlInput2" type="text" th:field="*{tuoi}">
+            <p th:if="${#fields.hasErrors('tuoi')}" th:errors="*{tuoi}" style="color:red;"></p>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label font-bold">Khoa</label>
+            <input class="form-control" id="exampleFormControlInput3" type="text" th:field="*{khoa}">
+            <p th:if="${#fields.hasErrors('khoa')}" th:errors="*{khoa}" style="color:red;"></p>
+        </div>
+        <p>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a th:href="@{/}" type="secondary" class="btn btn-secondary">Back Home</a>
+        </p>
+    </form>
+</section>
+</body>
+</html>
